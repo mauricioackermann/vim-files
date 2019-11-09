@@ -151,3 +151,4 @@ let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0 
 
 set timeoutlen=100
+
