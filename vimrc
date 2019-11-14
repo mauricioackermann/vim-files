@@ -24,6 +24,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
@@ -122,6 +123,8 @@ set title
 
 " Set shortcut for nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeWinSize=60
 
 " Set shortcut for Ctrl-P
 let g:ctrlp_map = '<c-p>'
@@ -149,3 +152,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 " Disable ALE auto highlights
 let g:ale_set_highlights = 0 
+
+" Set shortcut to close split panels
+map <leader>w :close<CR>
+
+runtime macros/matchit.vim
