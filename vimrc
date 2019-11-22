@@ -158,5 +158,4 @@ map <leader>w :close<CR>
 
 runtime macros/matchit.vim
 let g:ctrlp_show_hidden = 1
-set timeoutlen=100
 
