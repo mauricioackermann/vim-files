@@ -157,3 +157,5 @@ let g:ale_set_highlights = 0
 map <leader>w :close<CR>
 
 runtime macros/matchit.vim
+let g:ctrlp_show_hidden = 1
+
