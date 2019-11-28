@@ -13,18 +13,36 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Starts all plugins
 call vundle#begin('~/.vim/plugins')
 Plugin 'VundleVim/Vundle.vim'
+" Dracula Theme for Vim
 Plugin 'dracula/vim', { 'name': 'dracula' }
+" File Tree for Vim
 Plugin 'scrooloose/nerdtree'
+" Fuzzy Search for files
 Plugin 'ctrlpvim/ctrlp.vim'
+" Search in files
 Plugin 'mileszs/ack.vim'
+" Commenter
 Plugin 'scrooloose/nerdcommenter'
+" Syntax for javascript
 Plugin 'pangloss/vim-javascript'
+" Support for JSX
 Plugin 'mxw/vim-jsx'
+" Prettier JS linter
 Plugin 'prettier/vim-prettier'
+" Linter (used for ruby only)
 Plugin 'w0rp/ale'
+" Bar for displaying linter issues
 Plugin 'vim-airline/vim-airline'
+" Time tracking
 Plugin 'wakatime/vim-wakatime'
+" Git support for vim
 Plugin 'tpope/vim-fugitive'
+" Auto closes brackets, quotes and square brackets
+Plugin 'jiangmiao/auto-pairs'
+" Enchance Rails support
+Plugin 'tpope/vim-rails'
+" Vim end-wise adds support for auto add end when needed
+Plugin 'tpope/vim-endwise'
 call vundle#end()
 
 filetype plugin indent on
@@ -143,7 +161,7 @@ let g:prettier#config#semi = 'false'
 
 " Set specific linters
 let g:ale_linters = {
-\   'ruby': ['rubocop']
+\   'ruby': ['rubocop', 'reek']
 \}
 
 " Only run linters named in ale_linters settings.
