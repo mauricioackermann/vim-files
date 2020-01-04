@@ -37,12 +37,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'wakatime/vim-wakatime'
 " Git support for vim
 Plugin 'tpope/vim-fugitive'
-" Auto closes brackets, quotes and square brackets
+" Github support for vim
+Plugin 'tpope/vim-rhubarb'
+" Auto Pairs (auto closes brackets, parenthesis and etc)
 Plugin 'jiangmiao/auto-pairs'
-" Enchance Rails support
-Plugin 'tpope/vim-rails'
-" Vim end-wise adds support for auto add end when needed
-Plugin 'tpope/vim-endwise'
+" Adds support for GraphQL
+Plugin 'jparise/vim-graphql'
 call vundle#end()
 
 filetype plugin indent on
@@ -114,7 +114,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
-set relativenumber
+set norelativenumber
 set undofile
 nnoremap / /\v
 vnoremap / /\v
@@ -161,18 +161,22 @@ let g:prettier#config#semi = 'false'
 
 " Set specific linters
 let g:ale_linters = {
-\   'ruby': ['rubocop', 'reek']
+\   'ruby': ['rubocop', 'reek'],
+\   'jsx': ['eslint'],
+\   'javascript': ['eslint']
 \}
 
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1 
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:airline#extensions#ale#enabled = 1 
 let g:ale_sign_column_always = 1
 " Disable ALE auto highlights
 let g:ale_set_highlights = 0 
 
 " Set shortcut to close split panels
-map <leader>w :close<CR>
+map <leader>w :bd<CR>
 
 runtime macros/matchit.vim
 let g:ctrlp_show_hidden = 1
