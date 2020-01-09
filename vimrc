@@ -68,7 +68,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Hotkey to reload .vimrc (leader + s)
-map <leader>s :source ~/.vimrc<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
+nnoremap <leader>es :vsplit $MYVIMRC<cr>
 
 " MOVING BETWEEN FILES
 " Set 'hidden' if you want to open a new file inside the same buffer without the
@@ -181,3 +182,20 @@ map <leader>w :bd<CR>
 runtime macros/matchit.vim
 let g:ctrlp_show_hidden = 1
 
+" Navigate through buffers
+nnoremap <space> :bnext<cr>
+nnoremap <bs> :bprev<cr>
+nnoremap <leader>ls :ls<cr>:b<space>
+
+" Copy and Paste to clipboard
+noremap <leader>y "+y
+vnoremap <leader>p "+p
+nnoremap <leader>p "+p
+
+" Exit highlighting when on insert mode after search
+augroup highlight_search
+  autocmd!
+  autocmd InsertEnter * :setlocal nohlsearch
+  autocmd InsertLeave * :setlocal hlsearch
+augroup END
+nnoremap <leader>/ :nohlsearch<cr>
