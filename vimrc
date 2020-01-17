@@ -29,10 +29,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 " Prettier JS linter
 Plugin 'prettier/vim-prettier'
-" Linter (used for ruby only)
-Plugin 'w0rp/ale'
-" Bar for displaying linter issues
-Plugin 'vim-airline/vim-airline'
+"" Linter (used for ruby only)
+"Plugin 'w0rp/ale'
+"" Bar for displaying linter issues
+"Plugin 'vim-airline/vim-airline'
 " Time tracking
 Plugin 'wakatime/vim-wakatime'
 " Git support for vim
@@ -160,21 +160,21 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " Prettier default: true
 let g:prettier#config#semi = 'false'
 
-" Set specific linters
-let g:ale_linters = {
-\   'ruby': ['rubocop', 'reek'],
-\   'jsx': ['eslint'],
-\   'javascript': ['eslint']
-\}
+"" Set specific linters
+"let g:ale_linters = {
+"\   'ruby': ['rubocop', 'reek'],
+"\   'jsx': ['eslint'],
+"\   'javascript': ['eslint']
+"\}
 
-" Only run linters named in ale_linters settings.
-let g:ale_linters_explicit = 1 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:airline#extensions#ale#enabled = 1 
-let g:ale_sign_column_always = 1
-" Disable ALE auto highlights
-let g:ale_set_highlights = 0 
+"" Only run linters named in ale_linters settings.
+"let g:ale_linters_explicit = 1 
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"let g:airline#extensions#ale#enabled = 1 
+"let g:ale_sign_column_always = 1
+"" Disable ALE auto highlights
+"let g:ale_set_highlights = 0 
 
 " Set shortcut to close split panels
 map <leader>w :bd<CR>
